@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xin lỗi em</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-xin-loi-cute.jpg') no-repeat center center/cover;
+            flex-direction: column;
+            font-family: 'Pacifico', cursive;
+        }
+        .message {
+            font-size: 2rem;
+            color: #d97706;
+            text-align: center;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .accept {
+            background-color: #22c55e;
+            color: white;
+        }
+        .decline {
+            background-color: #ef4444;
+            color: white;
+            position: absolute;
+        }
+        .extra-message {
+            font-size: 1.5rem;
+            color: #d97706;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">Em hãy tha lỗi cho anh nhé</div>
+    <div class="buttons">
+        <button class="accept" onclick="showExtraMessage()">Oki</button>
+        <button class="decline" onmouseover="moveButton()">Hok chịu</button>
+    </div>
+    <div class="extra-message" id="extraMessage">Nếu tha lỗi cho anh thì hứa đừng giận anh nữa nhé ❤️</div>
+    <script>
+        function moveButton() {
+            let button = document.querySelector('.decline');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+        
+        function showExtraMessage() {
+            alert('Yay! Em đã tha lỗi cho anh ❤️');
+            document.getElementById('extraMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
